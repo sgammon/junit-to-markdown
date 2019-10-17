@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
 	"path"
 	"strings"
@@ -18,6 +19,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Println("# Test results")
+
 	for _, file := range dir {
 		if strings.HasPrefix(file.Name(), "TEST") {
 			f, err := ioutil.ReadFile(path.Join(os.Args[1], file.Name()))
@@ -32,7 +36,6 @@ func main() {
 
 
 			tmpl, err := template.New("").Parse(`
-# Test results
 {{- range .}}
 ### {{.Name}}
 |Success|Test|
