@@ -60,6 +60,6 @@ func main() {
 	}
 
 	if noFailingBuilds {
-		fmt.Println("# :white_check_mark: All tests passed!")
+		fmt.Println("### :white_check_mark: All tests passed!")
 	}
 }
