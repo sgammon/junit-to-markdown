@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -11,8 +10,6 @@ import (
 )
 
 func main() {
-	fmt.Println("# Test results")
-
 	for _, file := range os.Args[1:] {
 		f, err := ioutil.ReadFile(file)
 		if err != nil {
